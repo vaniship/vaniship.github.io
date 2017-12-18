@@ -1,0 +1,85 @@
+/node_modules/**/*
+
+# lodash
+!/node_modules/lodash/
+!/node_modules/lodash/lodash.min.js
+
+# jquery
+!/node_modules/jquery/
+!/node_modules/jquery/dist/
+!/node_modules/jquery/dist/jquery.min.js
+
+# bootstrap
+!/node_modules/bootstrap/
+!/node_modules/bootstrap/dist/
+!/node_modules/bootstrap/dist/css/
+!/node_modules/bootstrap/dist/css/bootstrap.min.css
+!/node_modules/bootstrap/dist/fonts/
+!/node_modules/bootstrap/dist/fonts/*
+!/node_modules/bootstrap/dist/js/
+!/node_modules/bootstrap/dist/js/bootstrap.min.js
+
+# jsonic
+!/node_modules/jsonic/
+!/node_modules/jsonic/jsonic-min.js
+
+# jstree
+!/node_modules/jstree/
+!/node_modules/jstree/dist/
+!/node_modules/jstree/dist/**/*
+
+# marked
+!/node_modules/marked/
+!/node_modules/marked/marked.min.js
+
+# MDBlog
+!/node_modules/mdblog/
+!/node_modules/mdblog/**/*
+/node_modules/mdblog/package.json
+
+# MDBlog Dir Tree Plugin
+!/node_modules/mdblog-plugin-dirtree/
+!/node_modules/mdblog-plugin-dirtree/**/*
+/node_modules/mdblog-plugin-dirtree/package.json
+
+# MDBlog Mermaid Plugin
+!/node_modules/mdblog-plugin-mermaid/
+!/node_modules/mdblog-plugin-mermaid/**/*
+/node_modules/mdblog-plugin-mermaid/package.json
+
+# MDBlog Orgchart Plugin
+!/node_modules/mdblog-plugin-orgchart/
+!/node_modules/mdblog-plugin-orgchart/**/*
+/node_modules/mdblog-plugin-orgchart/package.json
+
+# mermaid
+!/node_modules/mermaid/
+!/node_modules/mermaid/dist/
+!/node_modules/mermaid/dist/mermaid.min.js
+
+# orgchart
+!/node_modules/orgchart/
+!/node_modules/orgchart/dist/
+!/node_modules/orgchart/dist/**/*
+
+# prismjs
+!/node_modules/prismjs/
+!/node_modules/prismjs/components/
+!/node_modules/prismjs/components/*
+!/node_modules/prismjs/plugins/
+!/node_modules/prismjs/plugins/**/*
+!/node_modules/prismjs/themes/
+!/node_modules/prismjs/themes/*
+!/node_modules/prismjs/prism.js
+
+# requirejs
+!/node_modules/requirejs/
+!/node_modules/requirejs/require.js
+
+# require-css
+!/node_modules/require-css/
+!/node_modules/require-css/normalize.js
+!/node_modules/require-css/css.js
+!/node_modules/require-css/css-builder.js
+
+.DS_Store

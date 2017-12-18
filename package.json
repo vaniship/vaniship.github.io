@@ -1,0 +1,15 @@
+{
+  "name": "vaniship.github.io",
+  "version": "1.0.0",
+  "description": "vaniship.github.io",
+  "main": "index.js",
+  "scripts": {},
+  "author": "vaniship",
+  "license": "MIT",
+  "dependencies": {
+    "mdblog": "github:MD-Blog/mdblog",
+    "mdblog-plugin-dirtree": "github:MD-Blog/mdblog-plugin-dirtree",
+    "mdblog-plugin-mermaid": "github:MD-Blog/mdblog-plugin-mermaid",
+    "mdblog-plugin-orgchart": "github:MD-Blog/mdblog-plugin-orgchart"
+  }
+}
