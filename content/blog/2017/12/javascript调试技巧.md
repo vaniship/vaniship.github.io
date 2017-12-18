@@ -92,7 +92,7 @@ monitorEvents(window, "resize");
 
 也支持同时监听多个事件，如下面的命令同时监控 window 上的 "resize" 和 "scroll" 事件：
 
-```
+```javascript
 monitorEvents(window, ["resize", "scroll"])
 ```
 
