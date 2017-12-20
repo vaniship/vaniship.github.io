@@ -1,4 +1,6 @@
+package-lock.json
 /node_modules/**/*
+/content/inbox
 
 # lodash
 !/node_modules/lodash/
