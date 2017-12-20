@@ -9,6 +9,8 @@
 
   * [2017](/blog/2017/index.md)
 
+[翻译](/translation/index.md)
+
 [分类](/topic/index.md)
 
 [推荐](/recommend/index.md)
