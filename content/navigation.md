@@ -15,3 +15,4 @@
 
 [推荐](/recommend/index.md)
 
+[gimmick:edit-on-github:[编辑本页]](vaniship#master)

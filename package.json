@@ -8,6 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "mdblog": "github:MD-Blog/mdblog",
+    "mdblog-gimmick-edit-on-github": "github:MD-Blog/mdblog-gimmicks-edit-on-github",
     "mdblog-plugin-dirtree": "github:MD-Blog/mdblog-plugin-dirtree",
     "mdblog-plugin-mermaid": "github:MD-Blog/mdblog-plugin-mermaid",
     "mdblog-plugin-orgchart": "github:MD-Blog/mdblog-plugin-orgchart"
