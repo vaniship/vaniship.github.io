@@ -7,6 +7,7 @@
 
 [日志]()
 
+  * [2018](/blog/2018/index.md)
   * [2017](/blog/2017/index.md)
 
 [翻译](/translation/index.md)
