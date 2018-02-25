@@ -1,0 +1,519 @@
+# Config.xml
+
+``config.xml`` 是一个全局配置文件，它控制 cordova 应用程序的许多方面的行为。它是一个与平台无关的XML文件，基于W3C的[Packaged Web Apps (Widgets)](http://www.w3.org/TR/widgets/)规范，并通过扩展，用于配置 Cordova 核心 API，插件及特定平台的设置。
+
+对于使用 Cordova CLI 创建的项目（详见[命令行界面](http://cordova.apache.org/docs/en/latest/guide/cli/index.html)），它保存在项目顶层目录：
+
+```
+app/config.xml
+```
+
+注意，在版本3.3.1-0.2.0之前，该文件存在于``app/www/config.xml``中，并且仍然被支持。
+
+当使用 CLI 构建项目时，该文件会被复制到各个“platforms /”的子目录中。
+
+例如 ：
+
+```
+app/platforms/ios/AppName/config.xml
+app/platforms/blackberry10/www/config.xml
+app/platforms/android/res/xml/config.xml
+```
+
+除了下面详细介绍的各种配置选项之外，还可以为每个目标平台配置应用程序的图像资源集。请参阅[自定义图标主题]（http://cordova.apache.org/docs/en/latest/config_ref/images.html）了解更多信息。
+
+# 文档根元素
+``widget`` 是 config.xml 文档的 root 元素。
+
+属性（类型）<br/> <span class="sub-header">平台限定 ：</span> | 说明
+---------------- | ------------
+id(string) | *必填* <br/> 指定应用程序的反向域风格的标识符。
+version(string) | *必填* <br/> 以主 / 次 / 修补符号表示的完整版本号。
+android-versionCode(string) <br/> ==Android== | Android的版本代码。设置应用程序的[版本代码](http://developer.android.com/tools/publishing/versioning.html) 。有关如何修改这个属性的信息，请参阅 [Android 指南](../guide/platforms/android/index.html#setting-the-version-code)。
+defaultlocale <br /> ==iOS== | 指定应用程序的默认语言，使用IANA语言代码。
+android-packageName(string) <br/> ==Android== | Android的包名，覆盖``id``。
+android-activityName(string) <br/> ==Android== | 在 AndroidManifest.xml 中为您的应用设置活动名称。注意，这仅在首次添加 Android 平台之后设置一次。
+ios-CFBundleIdentifier(string)  <br/> ==iOS== |  iOS 的 bundle id。覆盖``id``。
+ios-CFBundleVersion(string) <br/> ==iOS== | iOS 的版本号。更多详细信息，请参阅[iOS版本](https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html#//apple_ref/doc/uid/20001431-102364) 。
+osx-CFBundleVersion(string) <br/> ==OS X== |  OS X的替代版本。有关更多详细信息，请参阅[OS X版本控制]（https://developer.apple.com/library/prerelease/mac/documentation/General/Reference/InfoPlistKeyReference/Articles /CoreFoundationKeys.html＃// apple_ref / DOC / UID / 20001431-102364）。
+windows-packageVersion(string) <br/> ==Windows== | Windows版本号。有关更详细的信息，请参阅[Windows版本](https://msdn.microsoft.com/en-us/library/windows/apps/br211441.aspx)。
+packageName(string) <br/> ==Windows== | *Default: Cordova.Example* <br/>  Windows 的包名称。
+xmlns(string) | *必填* <br/> 用于 config.xml 文档的命名空间。
+xmlns:cdv(string) | *必填* <br/> 命名空间前缀。
+
+范例：
+
+```xml
+<!-- Android -->
+<widget id="io.cordova.hellocordova" version="0.0.1" android-versionCode="13" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+</widget>
+
+<!-- iOS -->
+<widget id="io.cordova.hellocordova" version="0.0.1" ios-CFBundleVersion="0.1.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+</widget>
+
+<!-- Windows -->
+<widget id="io.cordova.hellocordova" version="0.0.1" windows-packageVersion="0.1.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+</widget>
+
+<!-- OS X -->
+<widget id="io.cordova.hellocordova" version="0.0.1" osx-CFBundleVersion="0.1.3" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+</widget>
+```
+
+## 设置应用名称
+
+用 ``name`` 元素来指定应用程序的正式名称，它出将出现在设备的主屏幕和应用程序商店界面中。
+
+范例：
+
+```xml
+<widget ...>
+   <name>HelloCordova</name>
+</widget>
+```
+
+### 设置应用短名称
+
+用 name 元素的 ``short`` 属性来指定应用程序的可选显示名称。有时，由于空间有限，应用程序名称在设备主屏幕上的显示信息和应用程序商店界面的显示方式有所不同。
+
+范例：
+
+```xml
+<widget ...>
+   <name short="HiCdv">HelloCordova</name>
+</widget>
+```
+
+## 设置应用描述
+
+用 ``description`` 元素来指定可能出现在应用商店中的元数据。
+
+范例:
+
+```xml
+<widget ...>
+   <description>A sample Apache Cordova application</description>
+</widget>
+```
+
+## 设置应用的作者信息
+
+用 ``author`` 元素来指定可能出现在应用商店列表中的联系信息。
+
+属性（类型）<br/> <span class="sub-header">平台限定 ：</span> | 说明
+----------------- | ------------
+email(string) | *必填* <br/> 作者电子邮件。
+href(string) | *必须* <br/> 作者网站。
+
+范例：
+
+```xml
+<widget ...>
+   <author email="dev@cordova.apache.org" href="http://cordova.io"></author>
+</widget>
+```
+
+## 设置其实页面
+
+用 ``content`` 元素来设置应用的起始页面，以顶级 ``www`` 目录为基。默认值是 ``index.html``，通常出现在项目的顶级 ``www`` 目录中。
+
+属性（类型）<br/> <span class="sub-header">平台限定 ：</span> | 说明
+----------------- | ------------
+src(string) | *必填* <br/> 以顶级 ``www`` 目录为基的应用程序的起始页面路径。默认值为 ``index.html``，通常为 ``index.html``。
+
+范例：
+
+```xml
+<widget ...>
+   <content src="startPage.html"></content>
+</widget>
+```
+
+## 访问控制
+
+用 ``access`` 元素来定义允许应用程序与之通信的外部域的集合。The default value shown above allows it to access any server.
+有关详细信息，请参阅域[白名单指南](../guide/appdev/whitelist/index.html)。
+
+属性（类型）<br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+origin(string) | *必填* <br/> 定义允许应用程序与之通信的外部域集合。
+The default value shown above allows it to access any server.
+有关详细信息，请参阅域[白名单指南](../guide/appdev/whitelist/index.html)。
+
+范例：
+
+```xml
+<widget ...>
+   <access origin="*"></access>
+</widget>
+
+<widget ...>
+   <access origin="http://google.com"></access>
+</widget>
+```
+
+## 导航控制
+
+用 ``allow-navigation`` 元素来控制 WebView 自身可以导航到的 URL。仅适用于顶级导航。
+
+属性（类型）<br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+href(string) | *必填* <br/> 定义允许 WebView 导航到的外部域集合。
+详情请参阅 cordova 插件白名单 [cordova 插件白名单][whitelist_navigation]。
+
+范例：
+
+```xml
+<!-- 允许链接到 example.com -->
+<allow-navigation href="http://example.com/*" />
+
+<!-- 可以使用通配符 -->
+<allow-navigation href="*://*.example.com/*" />
+```
+
+## Intent 控制
+
+用 ``allow-intent`` 来控制允许应用程序打开系统的URL。默认情况下，不允许使用外部URL。
+
+属性（类型）<br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+href(string) | *必填* <br/> 定义允许应用程序打开哪个 URL。
+详情请参阅 cordova 插件白名单 [cordova 插件白名单][whitelist_navigation]。
+
+范例：
+
+```xml
+<allow-intent href="http://*/*" />
+<allow-intent href="https://*/*" />
+<allow-intent href="tel:*" />
+<allow-intent href="sms:*" />
+```
+## 配置编辑
+
+使用 ``edit_config`` 元素来覆盖 ``plugin.xml`` 配置，，详情请参见 [docs][edit_config]。
+
+## 配置平台引擎
+
+使用 ``engine`` 元素来指定准备期间要还原的平台的详细信息。
+
+属性（类型）<br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+name(string) | *必填* <br/> 要处理的平台的名称。
+spec(string) | *Required* <br/> 关于要恢复的平台的详细信息。这可能是一个``major.minor.patch``版本号，一个包含平台的目录或一个指向git仓库的URL。这些信息将用于检索从NPM，本地目录或git存储库中恢复的平台代码。有关更多详细信息，请参阅[平台规范][platform_spec]ec]。
+
+范例：
+
+```xml
+<engine name="android" spec="https://github.com/apache/cordova-android.git#5.1.1" />
+<engine name="ios" spec="^4.0.0" />
+```
+
+## 配置插件
+
+使用 ``plugin`` 元素指定准备期间要还原的插件的详细信息。指定准备过程中要恢复的插件的详细信息。
+当使用“--save”标志添加插件时，该元素会自动添加到项目的“config.xml”中。
+ 有关添加插件的更多信息，请参阅 [CLI 参考资料][plugin_cli]。
+adding plugins.
+
+属性（类型）<br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+name(string) | *必填* <br/> 要还原的插件名称。
+spec(string) | *Required* <br/> 要还原的插件的详细信息。这可能是一个``major.minor.patch``版本号，一个包含插件的目录或者一个指向git仓库的URL。这些信息将被用来检索从NPM，本地目录或者git仓库中恢复的插件代码。有关详细信息，请参阅 [Plugin Spec][plugin_spec]。
+
+范例：
+
+```xml
+<plugin name="cordova-plugin-device" spec="^1.1.0" />
+<plugin name="cordova-plugin-device" spec="https://github.com/apache/cordova-plugin-device.git#1.0.0" />
+```
+
+### 插件变量
+
+在 prepare 恢复插件时使用的CLI变量的值。当使用``--save``标志添加使用CLI变量的插件时，将此元素添加到``config.xml``中。 有关添加插件的详细信息，请参阅 [CLI reference][plugin_cli]。
+
+注意，这些值只在执行 prepare 时同步到插件中，直接改变它不会改变当前项目中插件使用的值。要使这些值的改变生效，需要从项目中移除该插件，运行``cordova prepare``。有关 CLI 变量的更多细节，请参见 "plugin.xml" 的 [reference 元素][plugin_preference]。
+
+属性(类型) <br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+name(string) | *必填* <br/> 变量的名称。只能包含大写字母、数字和下划线。
+value(string) | *Required* <br/> 在 prepare 阶段同步到插件的值。
+
+范例：
+
+```xml
+<plugin name="cordova-plugin-device" spec="^1.1.0">
+    <variable name="MY_VARIABLE" value="my_variable_value" />
+</plugin>
+```
+
+## 参数设置
+
+使用 ``preference`` 元素来进行参数配置。形式为选项设置的名称/值属性对，选项名称不区分大小写。
+
+很多设置项都是相关平台所特有的。
+
+属性(类型) <br/> <span class="sub-header">平台限定： </span> | 说明
+----------------- | ------------
+AllowInlineMediaPlayback(boolean) <br/> ==iOS== | *默认值: false* <br/>  设置为 true 时，将允许 HTML5 媒体播放在屏幕布局内显示，使用浏览器提供的控件而不是本机控件。若要实现此功能，需在 ``<video>`` 元素中添加 ``playsinline`` 属性。*注意*: 在 iOS 10 之前，``<video>`` 元素中应添加 ``webkit-playsinline`` 属性来代替 ``playsinline``
+AndroidLaunchMode(string) <br/> ==Android== | **默认: singleTop** <br/> 所有支持的值: standard, singleTop, singleTask, singleInstance <br/>  用于设置 Android 平台中 Activity 的 android:launchMode 属性。 这个设置会改变 Activity 的启动模式。
+android-maxSdkVersion(integer) <br/> ==Android== | *默认值: 未指定* <br/>  用于设置 Android 平台  ``AndroidManifest.xml`` 详见 [这里][uses-sdk]) 文件中 ``<uses-sdk>``  标签的 ``maxSdkVersion`` 属性。
+android-minSdkVersion(integer) <br/> ==Android== | *默认值: 依赖于 cordova-android 的版本* <br/>  用于设置 Android 平台  ``AndroidManifest.xml`` 详见 [这里][uses-sdk]) 文件中 ``<uses-sdk>``  标签的 ``minSdkVersion`` 属性。
+android-targetSdkVersion(integer) <br/> ==Android== | *默认值: 依赖于 cordova-android 的版本* <br/>  用于设置 Android 平台  ``AndroidManifest.xml`` 详见 [这里][uses-sdk]) 文件中 ``<uses-sdk>``  标签的 ``targetSdkVersion`` 属性。
+AppendUserAgent(string) <br/> ==Android==<br/>==iOS== | 设置后，该值将附加到 Webview 的原有 UserAgent 之后。当与 OverrideUserAgent 一起使用时，该值将被忽略。
+BackgroundColor(string) <br/> ==Android==<br/>==iOS==<br/>==BlackBerry==<br/>==Windows== | 设置应用程序的背景色。支持四字节十六进制值，第一个字节表示透明通道，之后三个字节为 RGB 值。<br/> 对于 Windows，透明通道将被忽略。<br/> __注意__: ``transparent`` value will set the application tile background to the accent color on Windows.
+BackupWebStorage(string) <br/> ==iOS== | *默认: cloud* <br/> 可支持的值: none, local, cloud.<br/>   设置为 cloud 允许 web 存储数据通过 iCloud 备份。设置为 ``local``，只允许通过 iTunes 同步进行本地备份。 设置为 ``none`` 可防止 Web 存储备份。
+ChildBrowser(string) <br/> ==BlackBerry== | *默认值: enable* <br/>  禁用子浏览器窗口。By default, apps launch a secondary browser window to display resources accessed via window.open() or by specifying a _blank anchor target.Specify disable to override this default behavior.
+CordovaWebViewEngine(string) <br/> ==iOS== | *Default: CDVUIWebViewEngine* <br/>  设置用于呈现主机应用程序的 WebView 引擎插件。插件必须符合 CDVWebViewEngineProtocol 协议。这里的 ``值`` 应该与安装的 WebView 引擎插件的 ``features`` 名称相匹配。这项设置通常由安装的 WebView 引擎插件来自动设置。
+CordovaDefaultWebViewEngine(string) <br/> ==iOS== | *默认值: CDVUIWebViewEngine* <br/> As the previous setting, CordovaWebViewEngine, this enables you to override the default fallback WebView with a different plugin.默认的 WebView 使用私有插件 CDVUIWebViewEngine。如果需要使用公共的插件，可以通过覆盖这个选项来实现。A use case for this setting is where you need to use something other than the default CDVUIWebViewEngine to render the host app.如果设置了 CordovaDefault WebViewEngine 和 CordovaWebViewEngine， iOS9 及以上的设备将使用 CordovaWebViewEngine，而  iOS8 设备将降级使用 CordovaDefaultWebViewEngine 。插件必须符合 CDVWebViewEngineProtocol 协议。这里的 "值" 应该与安装的 WebView 引擎插件的 "features" 名称相匹配。
+DefaultVolumeStream(string) <br/> ==Android== | *默认值: default* <br/>  在 cordova-android 3.7.0 中增加, 设置在应中操作硬件音量按钮时改变音量的通道。默认情况下手机上对应值为 ``call``，平板对应值为 ``media`` 。设置为 "media" 时，在应用程序中操作的音量按钮总是改变媒体的音量。注意当使用 Cordova 媒体插件时，音量按钮的行为将被动态管理，任意媒体对象被激活时，音量按钮都将控制媒体音量。
+DisallowOverscroll(boolean) <br/> ==iOS==<br/>==Android== | *默认值: false* <br/> 如果您不想在用户超量滚动时做出反馈，可以将该选项设为 **true**。在 iOS 上，超量滚动手势会使内容弹回原来的位置。在 Android 上, 会在内容的顶部或底部产生微小的发光效果。<br/>
+EnableViewportScale(boolean) <br/> ==iOS== | *默认值: false* <br/>   Set to true to allow a viewport meta tag to either disable or restrict the range of user scaling, which is enabled by default.Place a viewport such as the following in the HTML to disable scaling and fit content flexibly within the rendering WebView: <br/> ``<meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no' />``
+EnableWebGL(boolean) <br/> ==OS X== | *默认值: false* <br/>  **(OS X 4.0.0+)** 设置为 true 可以启用web view 的 WebGL 。
+ErrorUrl(URL) <br/> ==Android== | *默认值: null* <br/>  If set, will display the referenced page upon an error in the application instead of a dialog with the title "Application Error".
+ErrorUrl(string) <br/> ==iOS== | If set, will display the referenced local page upon an error in the application.
+ForegroundText(string) <br/> ==Windows== | *默认值: "light"* <br/>   只适用于 Windows 8.1 项目 允许值 ： "light", "dark".如果 "Background Color =" white "或使用其他浅颜色，应设置为" dark "，以避免提交Windows Store 时被拒绝。
+FullScreen(boolean) <br/> ==Android== | *默认值: false* <br/>  允许应用隐藏屏幕顶部的状态栏。<br/> __注意__: 推荐利用[状态栏插件][statusbar_plugin]来平台无关的实现这个特性。
+GapBetweenPages(float) <br/> ==iOS== | *默认值: 0* <br/>  以点为单位设置页面间的间隙尺寸。
+HideKeyboardFormAccessoryBar(boolean) <br/> ==BlackBerry== | *默认值: false* <br/>  Set to true to hide the additional toolbar that appears above the keyboard, helping users navigate from one form input to another.
+HideMousePointer(integer) <br/> ==OS X== | *默认值: -1* <br/> **(OS X 4.0.0+)** 设置隐藏鼠标指针的超时。0 代表立即隐藏, -1 代表不隐藏。
+InAppBrowserStorageEnabled (boolean) <br/> ==Android== | *默认值: true* <br/>  控制应用浏览器是否可以访问和默认浏览器相同的 localStorage 和 WebSQL 存储。
+KeepRunning(boolean) <br/> ==Android== | *默认值: true* <br/>  设置即使在[暂停](../../../cordova/events/events.pause.html)事件触发后，应用程序是否仍在后台运行。设置为 false 时在[暂停](../../../cordova/events/events.pause.html) 时间出发后，不会结束应用, 但是当程序转入后台运行后将会停止执行 cordova webview 中的代码。
+KeyboardDisplayRequiresUserAction(boolean) <br/> ==iOS== | *默认值: true* <br/>  设置为 false 时，允许通过在输入域上调用 focus () 来显示键盘。
+LoadUrlTimeoutValue(number in milliseconds) <br/> ==Android== | *默认值: 20000, 20 seconds* <br/>  设置加载页面时，抛出超时错误之前等待的时间。
+LoadingDialog(string) <br/> ==Android== | *默认值: null* <br/>  如果设置了，则在加载应用程序的第一页时显示具有指定标题和消息的对话框和指示器。标题和消息为字符串，并用逗号分隔。
+LogLevel(string) <br/> ==Android== | *默认值: ERROR* <br/> 允许的值: ERROR, WARN, INFO, DEBUG, VERBOSE <br/> 设置应用程序日志消息的最小日志级别。
+MediaPlaybackAllowsAirPlay(boolean) <br/> ==iOS== | *Default: true* <br/>  Set to false to prevent Air Play from being used in this view.在默认的 UIWebView 和 WKWebView 中可用。
+MediaPlaybackRequiresUserAction(boolean) <br/> ==iOS== | *默认值: false* <br/> 设置为 true 时，可以防止 HTML5 视频或音频使用自动播放属性或通过 JavaScript 自动播放。
+Min/Max Version(Regex) <br/> ==Windows== | 允许的值: **/(Microsoft.+? &#124; Windows.+?)-(MinVersion &#124; MaxVersionTested)/i** <br/> Identifies the ecosystems and their min/max versions the app is compatible with.There are three parts to each value: the **SDK**, the **version restriction**, and the **version value**. These preferences are detected by beginning with ``Windows`` or ``Microsoft`` and ending in `-MinVersion` or `-MaxVersionTested`: <ul><li>The **SDK** defines what specialized platform you want to target. The default is ``Windows.Universal``. Valid values for these are defined in the AppxManifest schema, in the ``Package/Depednencies/TargetPlatform`` elements.</li><li>The **version restriction** defines application compatibility rules. For example, if the `-MinVersion` is set to 10.1.0.0, then OS versions which don't support at least 10.1.0.0 of the corresponding SDK won't be able to load it.Similarly you can also use ``-MaxVersionTested`` which specifies the highest-tested version of the SDK.If a new version of the corresponding SDK is released, it will run in compatibility mode for the specified version.</li><li>The **version value** is a 4-integer tuple in the form of *major.minor.build.qfe*.</li></ul> If no preferences of these types are specified in your config.xml file, then Windows.Universal version 10.0.0.0 will be chosen by default.<br/> **Note:** These preferences are only set in the appxmanifest files of the desired target-platform and not in the jsproj files.
+Orientation(string) | *默认值: default* <br/> 允许的值: default, landscape, portrait <br/> 允许应用锁定方向，以防止屏幕响应方向的变化而旋转。<br/> **注意:** 默认值意味着 Cordova 将从相应平台的清单 / 配置文件中删除锁定方向的代码，从而使平台回退到其默认行为。对于 iOS，要同时指定纵向和横向模式，您应该使用平台的特定值 ``all``。
+OSXLocalStoragePath(string) <br/> ==OS X== | *默认值: `~/Library/Application Support/{bundle.id}`* <br/> **(OS X 4.0.0+)** Sets the directory for the local storage path.
+OverrideUserAgent(string) <br/> ==Android== | 如果设置了该选项，该值将取代原有 Webview 的 UserAgent 值。请求远程页面时，这有助于识别请求来自应用程序还是浏览器。应小心使用，这可能引起现兼容性问题。对于大多数情况，应使用 AppendUserAgent。
+PageLength(float) <br/> ==iOS== | *默认值: 0* <br/>  The size of each page, in points, in the direction that the pages flow.When PaginationMode is right to left or left to right, this property represents the width of each page.When PaginationMode is topToBottom or bottomToTop, this property represents the height of each page.The default value is 0, which means the layout uses the size of the viewport to determine the dimensions of the page.
+PaginationBreakingMode(string) <br/> ==iOS== | *默认值: page* <br/> 允许的值: page, column <br/>  指定列或分页发生的方式。This property determines whether certain CSS properties regarding column- and page-breaking are honored or ignored.When this property is set to column, the content respects the CSS properties related to column-breaking in place of page-breaking.
+PaginationMode(string) <br/> ==iOS== | *默认值: unpaginated* <br/> 允许的值: unpaginated, leftToRight, topToBottom, bottomToTop, rightToLeft <br/>  该属性确定Web视图中的内容是否分解为一次填充一个屏幕的视图的页面，或显示为一个长滚动视图。If set to a paginated form, this property toggles a paginated layout on the content, causing the web view to use the values of PageLength and GapBetweenPages to relayout its content.
+PopupBlocker(string) <br/> ==BlackBerry== | *默认值: enable* <br/>  Enables the popup blocker, which prevents calls to window.open().By default, popups display in a child browser window.Setting the preference to enable prevents it from displaying at all.
+SetFullscreen(boolean) <br/> ==Android== | *Default: false* <br/>  Same as the Fullscreen parameter in the global configuration of this xml file.This Android-specific element is deprecated in favor of the global Fullscreen element, and will be removed in a future version.
+ShowTitle(boolean) <br/> ==Android== | *默认值: false* <br/>  在屏幕顶部显示标题。
+SplashScreenBackgroundColor <br/> ==Windows== | *默认值: #464646* <br/>  Sets the splashscreen background color.Supports a CSS color name or a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.<br/> The alpha channel is ignored although ``transparent`` value will cause black/white background color in case of Dark/Light theme accordingly.
+Suppresses3DTouchGesture(boolean) <br/> ==iOS== | *默认值: false* <br/>  设置为真时，可以避免当用户长按视图时，支持 3D 触摸的 iOS 设备出现放大镜。注意彻底测试您的应用程序，因为该选项会禁用 onclick 时间处理，但 ontouchend 不受影响。如果该项设置为真，SuppressesLongPressGesture 也会自动设置为真。
+SuppressesIncrementalRendering(boolean) <br/> ==iOS== | *默认值: false* <br/>  设置为 true 时，将接收到所有内容后才进行渲染。
+SuppressesLongPressGesture(boolean) <br/> ==iOS== | *默认值: false* <br/>  设置为真时，可以避免当用户长按 web 视图时，在 iOS9 及以上系统呈现放大镜部件。启用该选项后应彻底测试您的应用程序，因为这可能干扰文本选择功能。
+TopActivityIndicator(string) <br/> ==iOS== | *默认值: gray* <br/> 允许的值: whiteLarge, white, gray.控制状态栏中指示活动进度的小旋转图标的外观。
+uap-target-min-version(string) <br/> ==Windows== | 此属性设置 Windows UAP 的 MinTargetVersion。如果未指定，则将其设置为初始版本 10.0.10240.0 <br/> **Note:** 此首选项设置在 jsproj 文件中，而不是 appxmanifest 文件中。因此，操作系统版本低于此值的用户将无法运行该应用程序。
+UIWebViewDecelerationSpeed(string) <br/> ==iOS== | *默认值: normal* <br/> 允许的值：normal, fast <br/>  此属性控制快速滚动的减速速度。``normal`` 是大多数本地应用程序的默认速度。``fast`` 是移动版 Safari 的默认速度。
+WebSecurity(string) <br/> ==BlackBerry== | *默认值: enable* <br/>  Set to disable to override web security settings, allowing access to remote content from unknown sources.This preference is intended as a development convenience only, so remove it before packaging the app for distribution.For the released app, all URIs should be known and whitelisted using the ``<access>`` element, described in the Domain Whitelist Guide.
+WindowSize(string) <br/> ==OS X== | *默认值: auto* <br/> **(OS X 4.0.0+)** Sets the size of the application window.<br/> Accepts the format ``WxH`` for a specific width and height or the special values ``auto`` and ``fullscreen``.The latter will open a borderless window spanning the entire desktop area.Please note, that this is different from the _normal_ OS X fullscreen mode, which would never span multiple displays.<br/> **Note**: The global cordova ``fullscreen`` preference has no effect in OS X.
+WindowsDefaultUriPrefix(string) <br/> ==Windows== | Allowed values: ``ms-appx://``, ``ms-appx-web://`` <br/>  Identifies whether you want your app to target the local context or remote context as its startup URI.When building for Windows 10, the default is the remote context (``ms-appx-web://``).<br/> In order to have a local-mode application that is not impacted by Remote Mode capability restrictions, you must set this preference to ``ms-appx://`` and not declare any `<access>` elements with remote URIs.The local mode is the default for Windows 8.1
+WindowsStoreDisplayName(string) <br/> ==Windows== | A friendly name for the publisher that can be displayed to users.
+WindowsStoreIdentityName(string) <br/> ==Windows== | Identity name used for Windows store.The identity defines a globally unique identifier for a package.A package identity is represented as a tuple of attributes of the package.See the [identity page on the package manifest schema reference](https://msdn.microsoft.com/en-us/library/windows/apps/br211441.aspx) for further details.
+WindowsStorePublisherName(string) <br/> ==Windows== | Publisher Display Name.
+WindowsToastCapable(boolean) <br/> ==Windows== | *Default: false* <br/>  A value of ``true`` indicates that the app is allowed to provide 'toast notifications'.
+deployment-target(string) <br/> ==iOS== | 在构建中设置IPHONEOS_DEPLOYMENT_TARGET，它最终将转化为 ipa 中的 MinimumOSVersion。有关详细信息，请参阅苹果关于部署目标设置的文档。
+target-device(string) <br/> ==iOS== | *默认值: universal* <br/> 允许的值: handset, tablet, universal <br/>  此属性直接映射到 xcode 项目中的 TARGETED_DEVICE_FAMILY。注意，如果你的目标是 universal（默认），你将需要为 iPhone 和 iPad 提供屏幕截图，否则你的应用程序可能会被拒绝。
+windows-phone-target-version(string) <br/> ==Windows== | Sets the version of Windows Phone for which the package (resulting from ``cordova build``) will target.If none is specified, it will be set to the same version as ``windows-target-version`` (if found).
+windows-target-version(string) <br/> ==Windows== | Sets the version of Windows for which the package (resulting from ``cordova build``) will target.If none is specified, it will be set to '8.1'.
+
+范例:
+
+```xml
+<preference name="DisallowOverscroll" value="true"/>
+<preference name="Fullscreen" value="true" />
+<preference name="BackgroundColor" value="0xff0000ff"/>
+<preference name="HideKeyboardFormAccessoryBar" value="true"/>
+<preference name="Orientation" value="landscape" />
+
+<!-- 仅针对 iOS 的配置 -->
+<preference name="EnableViewportScale" value="true"/>
+<preference name="MediaPlaybackAllowsAirPlay" value="false"/>
+<preference name="MediaPlaybackRequiresUserAction" value="true"/>
+<preference name="AllowInlineMediaPlayback" value="true"/>
+<preference name="BackupWebStorage" value="local"/>
+<preference name="TopActivityIndicator" value="white"/>
+<preference name="SuppressesIncrementalRendering" value="true"/>
+<preference name="GapBetweenPages" value="0"/>
+<preference name="PageLength" value="0"/>
+<preference name="PaginationBreakingMode" value="page"/>
+<preference name="PaginationMode" value="unpaginated"/>
+<preference name="UIWebViewDecelerationSpeed" value="fast" />
+<preference name="ErrorUrl" value="myErrorPage.html"/>
+<preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />
+<preference name="AppendUserAgent" value="My Browser" />
+<preference name="target-device" value="universal" />
+<preference name="deployment-target" value="7.0" />
+<preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
+<preference name="CordovaDefaultWebViewEngine" value="CDVUIWebViewEngine" />
+<preference name="SuppressesLongPressGesture" value="true" />
+<preference name="Suppresses3DTouchGesture" value="true" />
+
+<!-- 仅针对 Android 的配置 -->
+<preference name="KeepRunning" value="false"/>
+<preference name="LoadUrlTimeoutValue" value="10000"/>
+<preference name="InAppBrowserStorageEnabled" value="true"/>
+<preference name="LoadingDialog" value="My Title,My Message"/>
+<preference name="ErrorUrl" value="myErrorPage.html"/>
+<preference name="ShowTitle" value="true"/>
+<preference name="LogLevel" value="VERBOSE"/>
+<preference name="AndroidLaunchMode" value="singleTop"/>
+<preference name="DefaultVolumeStream" value="call" />
+<preference name="OverrideUserAgent" value="Mozilla/5.0 My Browser" />
+<preference name="AppendUserAgent" value="My Browser" />
+
+<!-- 仅针对 Windows 的配置 -->
+<preference name="windows-phone-target-version" value="8.1" />
+<preference name="windows-target-version" value="8.1" />
+<preference name="Windows.Universal" value="10.0.10240.0" />
+<preference name="WindowsDefaultUriPrefix" value="ms-appx://" />
+<preference name="Windows.Mobile-MaxVersionTested" value="10.0.10031.0" />
+<preference name="Windows.Universal-MinVersion" value="10.0.0.0" />
+<preference name="WindowsStoreIdentityName" value="Cordova.Example.ApplicationDataSample" />
+<preference name="WindowsStorePublisherName" value="CN=Contoso Corp, O=Contoso Corp, L=Redmond, S=Washington, C=US" />
+<preference name="WindowsToastCapable" value="true" />
+<preference name="uap-target-min-version" value="10.0.10586.0" />
+
+<!-- 仅针对 BlackBerry 的配置 -->
+<preference name="ChildBrowser" value="disable"/>
+<preference name="PopupBlocker" value="enable"/>
+<preference name="WebSecurity" value="disable"/>
+
+<!-- 仅针对 OS X 的配置 -->
+<preference name="HideMousePointer" value="5"/>
+<preference name="OSXLocalStoragePath" value="~/.myapp/database"/>
+<preference name="WindowSize" value="800x400"/>
+<preference name="EnableWebGL" value="true"/>
+```
+
+## 配置设备特性
+
+如果使用 CLI 构建应用程序，则使用 plugin 命令启用设备 API。这不会修改顶级 config.xml 文件，因此该元素不应用于您的工作流。
+
+如果您直接在 SDK 下工作，并使用平台特定的 config.xml 文件作为源，那么您可以使用 ``feature`` 标签来启用设备级 API 和外部插件。它们经常与自定义值一起出现在平台特定的 config.xml 文件中。有关如何指定每个功能的详细信息，请参阅 API 参考。
+
+有关插件的详细信息，请参阅[插件开发指南](../guide/hybrid/plugins/index.html)。
+
+注意: 大多数情况下，您不需直接设置此值。
+
+属性(类型) <br/> <span class="sub-header">平台限定:</span> | 说明
+----------------- | ------------
+name(string) | *必填* <br/> 要启用的插件的名称
+
+
+### 配置特性参数
+
+用于指定某些插件参数，例如：从哪个包检索插件代码，以及在 Webview 初始化期间是否初始化插件。
+
+属性(类型) <br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+name(string) <br/> ==iOS==<br/>==OS X==<br/>==Android== | *必填* <br/> 允许的值: android-package, ios-package, osx-package, onload.<br/>  'ios-package', 'osx-package' 和 'android-package' 在初始化插件代码时于指定包名(通过 value 属性指定)，而 'onload' 用于指定相关插件(通过 value 属性指定)是否要在初始化时实例化。
+value(string or boolean) <br/> ==iOS==<br/>==OS X==<br/>==Android== | *必填* <br/>  指定初始化插件代码的包名（'name'属性为 android-package，ios-package 或 osx-package 时），指定初始化期间需要实例化的插件名称（' name' 属性为 'onload' 时）。
+
+范例:
+
+```xml
+<!-- 为 Android 项目指定设备 API -->
+<feature name="Device">
+   <param name="android-package" value="org.apache.cordova.device.Device" />
+</feature>
+
+<!-- 为 iOS 项目指定设备 API -->
+<feature name="Device">
+   <param name="ios-package" value="CDVDevice" />
+   <param name="onload" value="true" />
+</feature>
+
+<!-- 为 OS X 项目指定设备 API -->
+<feature name="Device">
+   <param name="osx-package" value="CDVDevice" />
+   <param name="onload" value="true" />
+</feature>
+```
+
+
+## 配置特定平台的设置
+
+当使用 CLI 构建应用程序时，有时需要指定特定于特定平台的首选项或其他元素。使用元素指定只能出现在单个特定于平台的 config.xml 文件中的配置。
+
+属性(类型) <br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+name(string) | *必填* <br/> 被设定配置的平台名称。
+
+范例:
+
+```xml
+<platform name="android">
+   <preference name="Fullscreen" value="true" />
+</platform>
+```
+
+## 配置钩子
+
+表示当某个操作发生时（例如，在添加插件或调用平台准备逻辑之后）将由 Cordova 调用的自定义脚本。当您需要扩展默认的 Cordova 功能时，这是很有用的。有关详细信息，请参阅 [Hooks Guide](../guide/appdev/hooks/index.html)。
+
+属性(类型) <br/> <span class="sub-header">平台限定：</span> | 说明
+----------------- | ------------
+type(string) | *必填* <br/> 指定要调用自定义脚本的操作。
+src(string) | *Required* <br/> 指定在发生特定操作时要调用的脚本的位置。
+
+范例:
+
+```xml
+<hook type="after_plugin_install" src="scripts/afterPluginInstall.js" />
+```
+
+## 配置资源复制
+
+``resource-file`` 元素用于配置将资源文件安装到平台中，与 plugin.xml 中的 resource-file 功能类似。该标签仅在 ``cordova-ios@4.4.0`` 和 ``cordova-android@6.2.1`` 之后的版本支持。
+
+属性(类型) <br/> <span class="sub-header">平台限定：</span> | 说明
+---------------- | ------------
+src(string) <br/> ==iOS==<br/>==Android==| *必填* <br/> 相对于 'config.xml' 的位置。
+target(string) | 复制的目标路径。
+
+范例:
+
+适用于 Android ：
+```xml
+<resource-file src="FooPluginStrings.xml" target="res/values/FooPluginStrings.xml" />
+```
+
+# config.xml 示例
+下面是 config.xml 文件示例 ：
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.cordova.hellocordova" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>HelloCordova</name>
+  <description>
+      A sample Apache Cordova application that responds to the deviceready event.
+  </description>
+  <author email="dev@cordova.apache.org" href="http://cordova.io">
+      Apache Cordova Team
+  </author>
+  <content src="index.html" />
+  <plugin name="cordova-plugin-whitelist" spec="1" />
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+  <platform name="android">
+      <allow-intent href="market:*" />
+  </platform>
+  <platform name="ios">
+      <allow-intent href="itms:*" />
+      <allow-intent href="itms-apps:*" />
+  </platform>
+</widget>
+```
+
+[uses-sdk]:             http://developer.android.com/guide/topics/manifest/uses-sdk-element.html
+[platform_spec]:        ../reference/cordova-cli/index.html#platform-spec
+[plugin_preference]:    ../plugin_ref/spec.html#preference
+[plugin_spec]:          ../reference/cordova-cli/index.html#plugin-spec
+[plugin_cli]:           ../reference/cordova-cli/index.html#cordova-plugin-command
+[whitelist_navigation]: ../reference/cordova-plugin-whitelist/index.html#navigation-whitelist
+[whitelist_intent]:     ../reference/cordova-plugin-whitelist/index.html#intent-whitelist
+[statusbar_plugin]:     ../reference/cordova-plugin-statusbar/
+[edit_config]:          ../plugin_ref/spec.html#edit-config
