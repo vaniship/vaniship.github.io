@@ -292,20 +292,20 @@ cordova {plugin | plugins} [
 ]
 ```
 
-| 子命令                             | 选项                         | 说明                                                                                                                                                        |
-| ---------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| add ``<plugin-spec>`` [...]        |                              | 添加指定的插件。                                                                                                                                            |
-|                                    | --searchpath ``<directory>`` | 当按 ID 查找插件时，在查询注册表之前，先查看这个目录及其每个子目录。 可以指定多条搜索路径。 多个路径的分割符，类 Linux 系统使用 ``:``， Windows使用 ``;``。 |
-|                                    | --noregistry                 | 不要在注册表中搜索插件。                                                                                                                                    |
-|                                    | --link                       | 当使用本地路径安装插件时，以创建链接来代替复制文件. 文件链接的创建因平台而异。 这非常便于插件开发。                                                         |
-|                                    | --nosave                     | 不将插件相关信息保存到 ``config.xml`` (plugin 元素)或 ``package.json`` 中                                                                                   |
-|                                    | --browserify                 | Compile plugin JS at build time using browserify instead of runtime.                                                                                        |
-|                                    | --force                      | _Introduced in version 6.1._ Forces copying source files from the plugin even if the same file already exists in the target directory.                      |
-| remove ``<pluginid>|<name>`` [...] |                              | 移除具有给定 ID / 名称的插件。                                                                                                                              |
-|                                    | --nosave                     | 不删除 config.xml 和 package.json 中的插件相关信息。                                                                                                        |
-| list                               |                              | 列出当前已安装的插件(包括其版本信息)                                                                                                                        |
-| search `[<keyword>]` [...]         |                              | 在 http://plugins.cordova.io 中搜索符合搜索关键字的插件                                                                                                     |
-| save                               |                              | 将所有已添加的插件的相关信息保存到项目配置中。                                                                                                              |
+| 子命令                                      | 选项                         | 说明                                                                                                                                                        |
+| ------------------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| add ``<plugin-spec>`` [...]                 |                              | 添加指定的插件。                                                                                                                                            |
+|                                             | --searchpath ``<directory>`` | 当按 ID 查找插件时，在查询注册表之前，先查看这个目录及其每个子目录。 可以指定多条搜索路径。 多个路径的分割符，类 Linux 系统使用 ``:``， Windows使用 ``;``。 |
+|                                             | --noregistry                 | 不要在注册表中搜索插件。                                                                                                                                    |
+|                                             | --link                       | 当使用本地路径安装插件时，以创建链接来代替复制文件. 文件链接的创建因平台而异。 这非常便于插件开发。                                                         |
+|                                             | --nosave                     | 不将插件相关信息保存到 ``config.xml`` (plugin 元素)或 ``package.json`` 中                                                                                   |
+|                                             | --browserify                 | Compile plugin JS at build time using browserify instead of runtime.                                                                                        |
+|                                             | --force                      | _Introduced in version 6.1._ Forces copying source files from the plugin even if the same file already exists in the target directory.                      |
+| remove ``<pluginid>``&#124;``<name>`` [...] |                              | 移除具有给定 ID / 名称的插件。                                                                                                                              |
+|                                             | --nosave                     | 不删除 config.xml 和 package.json 中的插件相关信息。                                                                                                        |
+| list                                        |                              | 列出当前已安装的插件(包括其版本信息)                                                                                                                        |
+| search `[<keyword>]` [...]                  |                              | 在 http://plugins.cordova.io 中搜索符合搜索关键字的插件                                                                                                     |
+| save                                        |                              | 将所有已添加的插件的相关信息保存到项目配置中。                                                                                                              |
 
 ### Plugin-spec
 
