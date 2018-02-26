@@ -10,40 +10,40 @@ cordova <command> [options] -- [platformOpts]
 
 下面这些命令随时可用。
 
-| 命令  | 说明
-|----------|--------------
-| create | 创建工程
-| help <command> | 获取相关命令的帮助
-| telemetry | Turn telemetry collection on or off
-| config |设置、获取、删除、编辑和列出全局 cordova 选项。
+| 命令           | 说明                                            |
+| -------------- | ----------------------------------------------- |
+| create         | 创建工程                                        |
+| help <command> | 获取相关命令的帮助                              |
+| telemetry      | Turn telemetry collection on or off             |
+| config         | 设置、获取、删除、编辑和列出全局 cordova 选项。 |
 
 ## 项目命令列表
 
 当前工作目录是有效的 Cordova 项目时，支持以下命令。
 
-| 命令      | 说明
-|--------------|--------------
-| info         | 收集并打印项目信息
-| requirements | 检查项目所需依赖，并打印详细信息
-| platform     | 管理项目平台。
-| plugin       | 管理项目插件。
-| prepare      | 将文件复制到平台目录以供编译。
-| compile      | 编译项目中平台目录中的代码。
-| clean        | 清理项目
-| run          | 运行项目 (会执行 prepare 和 compile)
-| serve        | 启动本地服务器 (会执行 prepare)
+| 命令         | 说明                                 |
+| ------------ | ------------------------------------ |
+| info         | 收集并打印项目信息                   |
+| requirements | 检查项目所需依赖，并打印详细信息     |
+| platform     | 管理项目平台。                       |
+| plugin       | 管理项目插件。                       |
+| prepare      | 将文件复制到平台目录以供编译。       |
+| compile      | 编译项目中平台目录中的代码。         |
+| clean        | 清理项目                             |
+| run          | 运行项目 (会执行 prepare 和 compile) |
+| serve        | 启动本地服务器 (会执行 prepare)      |
 
 ##  通用选项
 
 这些选项适用于所有 cordova - cli 命令。
 
-| 选项               | 说明
-|----------------------|------------------------
-| -d or --verbose      | 在终端中打印更详细的信息。 如果将 ``cordova-cli`` 作为模块使用，也可以通过 ``cordova.on('log', function () {})`` 或  ``cordova.on('warn', function () {})``来订阅 ``log`` 和 ``warn`` 事件。
-| -v or --version      | 输出 ``cordova-cli`` 的版本号.
-| --no-update-notifier | 禁用更新检查。 也可以通过在 ``~/.config/configstore/update-notifier-cordova.json`` 中设置 ``"optOut": true`` 或设置环境变量 ``NO_UPDATE_NOTIFIER``(设置任意值均可)(详见[更新通知文档](https://www.npmjs.com/package/update-notifier#user-settings)).
-|--nohooks             | 禁用钩子(参数为正则表达式)
-| --no-telemetry       | Disable telemetry collection for the current command.
+| 选项                 | 说明                                                                                                                                                                                                                                                 |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| -d or --verbose      | 在终端中打印更详细的信息。 如果将 ``cordova-cli`` 作为模块使用，也可以通过 ``cordova.on('log', function () {})`` 或  ``cordova.on('warn', function () {})``来订阅 ``log`` 和 ``warn`` 事件。                                                         |
+| -v or --version      | 输出 ``cordova-cli`` 的版本号.                                                                                                                                                                                                                       |
+| --no-update-notifier | 禁用更新检查。 也可以通过在 ``~/.config/configstore/update-notifier-cordova.json`` 中设置 ``"optOut": true`` 或设置环境变量 ``NO_UPDATE_NOTIFIER``(设置任意值均可)(详见[更新通知文档](https://www.npmjs.com/package/update-notifier#user-settings)). |
+| --nohooks            | 禁用钩子(参数为正则表达式)                                                                                                                                                                                                                           |
+| --no-telemetry       | Disable telemetry collection for the current command.                                                                                                                                                                                                |
 
 ## 平台专用选项
 
@@ -90,20 +90,20 @@ cordova build android --release -- --keystore="..\android.keystore" --storePassw
 cordova create path [id [name [config]]] [options]
 ```
 
-| 值 | 说明   |
-|-------|---------------|
-| path  |  应该是一个不存在的目录。 Cordova 将创建这个目录。 有关目录结构的详细信息, 请参阅下文。 |
-| id    | _默认值_: ``io.cordova.hellocordova`` <br/>  反向域风格标识符，映射到 ``config.xml`` 中 ``widget`` 元素的 ``id`` 属性。This can be changed but there may be code generated using this value, such as Java package names. 建议您选择适当的值。  |
-| name  | _默认值_: ``HelloCordova`` <br/> 应用程序的显示名称，映射到 ``config.xml`` 文件中的 ``name`` 元素。 This can be changed but there may be code generated using this value, such as Java class names. 默认值为 "HelloCordova"，但建议您选择合适的值。 |
-| config | JSON 字符串形式的键值对，将被包含到 ``<path>``/.cordova/config.json 文件中|
+| 值     | 说明                                                                                                                                                                                                                                                |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| path   | 应该是一个不存在的目录。 Cordova 将创建这个目录。 有关目录结构的详细信息, 请参阅下文。                                                                                                                                                              |
+| id     | _默认值_: ``io.cordova.hellocordova`` <br/>  反向域风格标识符，映射到 ``config.xml`` 中 ``widget`` 元素的 ``id`` 属性。This can be changed but there may be code generated using this value, such as Java package names. 建议您选择适当的值。       |
+| name   | _默认值_: ``HelloCordova`` <br/> 应用程序的显示名称，映射到 ``config.xml`` 文件中的 ``name`` 元素。 This can be changed but there may be code generated using this value, such as Java class names. 默认值为 "HelloCordova"，但建议您选择合适的值。 |
+| config | JSON 字符串形式的键值对，将被包含到 ``<path>``/.cordova/config.json 文件中                                                                                                                                                                          |
 
 ### 选项
 
-| 选项 | 说明 |
-|--------|-------------|
-| --template |  使用自定义模板，可以是本地目录、指向 NPM 仓库或 GitHub 。 |
-| --copy-from\|--src | _Deprecated_ <br/> Use --template instead. 指定要复制到当前 Cordova 项目的目录。 |
-|--link-to | 不创建副本，仅通过链接到指定的 "www" 目录。 |
+| 选项                   | 说明                                                                             |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| --template             | 使用自定义模板，可以是本地目录、指向 NPM 仓库或 GitHub 。                        |
+| --copy-from&#124;--src | _Deprecated_ <br/> Use --template instead. 指定要复制到当前 Cordova 项目的目录。 |
+| --link-to              | 不创建副本，仅通过链接到指定的 "www" 目录。                                      |
 
 ### 目录结构
 
@@ -198,18 +198,18 @@ cordova {platform | platforms} [
     update ]
 ```
 
-| 子命令           | 选项 | 说明 |
-------------------------|-------------|------|
-| add ``<platform-spec>`` [...] |  | 添加指定的平台 |
-|     | --nosave                 | Do not save ``<platform-spec>`` into ``config.xml`` & ``package.json`` after installing them using ``<engine>`` tag |
-|     | --link=``<path>``          | When ``<platform-spec>`` is a local path, links the platform library directly instead of making a copy of it (support varies by platform; useful for platform development)
-| remove ``<platform>`` [...] |    | 移除指定的平台  |
-|     | --nosave                 | 删除指定平台目录，但保留 ``config.xml`` 和 ``package.json`` 中的相关信息 |
-| update ``platform`` [...] |      | 更新指定平台 |
-|     | --save                   | 更新 ``config.xml`` 中的相关版本号 |
-| list |                         | 列出所有已安装和可用的平台  |
-| check |                        | 列出可通过 ``cordova-cli platform update`` 更新的平台 |
-| save  |                        | Save ``<platform-spec>`` of all platforms added to config.xml |
+| 子命令                        | 选项              | 说明                                                                                                                                                                       |
+| ----------------------------- | ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| add ``<platform-spec>`` [...] |                   | 添加指定的平台                                                                                                                                                             |
+|                               | --nosave          | Do not save ``<platform-spec>`` into ``config.xml`` & ``package.json`` after installing them using ``<engine>`` tag                                                        |
+|                               | --link=``<path>`` | When ``<platform-spec>`` is a local path, links the platform library directly instead of making a copy of it (support varies by platform; useful for platform development) |
+| remove ``<platform>`` [...]   |                   | 移除指定的平台                                                                                                                                                             |
+|                               | --nosave          | 删除指定平台目录，但保留 ``config.xml`` 和 ``package.json`` 中的相关信息                                                                                                   |
+| update ``platform`` [...]     |                   | 更新指定平台                                                                                                                                                               |
+|                               | --save            | 更新 ``config.xml`` 中的相关版本号                                                                                                                                         |
+| list                          |                   | 列出所有已安装和可用的平台                                                                                                                                                 |
+| check                         |                   | 列出可通过 ``cordova-cli platform update`` 更新的平台                                                                                                                      |
+| save                          |                   | Save ``<platform-spec>`` of all platforms added to config.xml                                                                                                              |
 
 ### Platform-spec
 
@@ -219,13 +219,13 @@ cordova {platform | platforms} [
 <platform-spec> : platform[@version] | path | url[#commit-ish]
 ```
 
-| 值 | 说明 |
-|-----------|-------------|
-| platform  | 需添加到项目中的平台名称，如 Android、iOS、windows 等。 Every release of cordova CLI pins a version for each platform. When no version is specified this version is used to add the platform. |
-| version   | 主要版本号.次要版本号.补丁版本号 风格的版本号 |
-| path      | 包含平台的目录或 tar 包的路径 |
-| url       | 包含平台的指向 git 仓库或 tar 包的 URL |
-| commit-ish | 提交、标签或分支引用. 如果未指定，则使用 ``master`` |
+| 值         | 说明                                                                                                                                                                                          |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| platform   | 需添加到项目中的平台名称，如 Android、iOS、windows 等。 Every release of cordova CLI pins a version for each platform. When no version is specified this version is used to add the platform. |
+| version    | 主要版本号.次要版本号.补丁版本号 风格的版本号                                                                                                                                                 |
+| path       | 包含平台的目录或 tar 包的路径                                                                                                                                                                 |
+| url        | 包含平台的指向 git 仓库或 tar 包的 URL                                                                                                                                                        |
+| commit-ish | 提交、标签或分支引用. 如果未指定，则使用 ``master``                                                                                                                                           |
 
 ### 支持的平台
 
@@ -292,20 +292,20 @@ cordova {plugin | plugins} [
 ]
 ```
 
-| 子命令 | 选项 | 说明
-|------------------------|-------------|------
-| add ``<plugin-spec>`` [...] |     | 添加指定的插件。
-|       |--searchpath ``<directory>`` | 当按 ID 查找插件时，在查询注册表之前，先查看这个目录及其每个子目录。 可以指定多条搜索路径。 多个路径的分割符，类 Linux 系统使用 ``:``， Windows使用 ``;``。
-|       |--noregistry             | 不要在注册表中搜索插件。
-|       |--link                   | 当使用本地路径安装插件时，以创建链接来代替复制文件. 文件链接的创建因平台而异。 这非常便于插件开发。
-|       |--nosave                 | 不将插件相关信息保存到 ``config.xml`` (plugin 元素)或 ``package.json`` 中
-|       |--browserify             | Compile plugin JS at build time using browserify instead of runtime.
-|       |--force                  | _Introduced in version 6.1._ Forces copying source files from the plugin even if the same file already exists in the target directory.
-| remove ``<pluginid>|<name>`` [...]| | 移除具有给定 ID / 名称的插件。
-|       |--nosave                 | 不删除 config.xml 和 package.json 中的插件相关信息。
-|list                           |  | 列出当前已安装的插件(包括其版本信息)
-|search `[<keyword>]` [...]     |  | 在 http://plugins.cordova.io 中搜索符合搜索关键字的插件
-|save                           |  | 将所有已添加的插件的相关信息保存到项目配置中。
+| 子命令                             | 选项                         | 说明                                                                                                                                                        |
+| ---------------------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| add ``<plugin-spec>`` [...]        |                              | 添加指定的插件。                                                                                                                                            |
+|                                    | --searchpath ``<directory>`` | 当按 ID 查找插件时，在查询注册表之前，先查看这个目录及其每个子目录。 可以指定多条搜索路径。 多个路径的分割符，类 Linux 系统使用 ``:``， Windows使用 ``;``。 |
+|                                    | --noregistry                 | 不要在注册表中搜索插件。                                                                                                                                    |
+|                                    | --link                       | 当使用本地路径安装插件时，以创建链接来代替复制文件. 文件链接的创建因平台而异。 这非常便于插件开发。                                                         |
+|                                    | --nosave                     | 不将插件相关信息保存到 ``config.xml`` (plugin 元素)或 ``package.json`` 中                                                                                   |
+|                                    | --browserify                 | Compile plugin JS at build time using browserify instead of runtime.                                                                                        |
+|                                    | --force                      | _Introduced in version 6.1._ Forces copying source files from the plugin even if the same file already exists in the target directory.                      |
+| remove ``<pluginid>|<name>`` [...] |                              | 移除具有给定 ID / 名称的插件。                                                                                                                              |
+|                                    | --nosave                     | 不删除 config.xml 和 package.json 中的插件相关信息。                                                                                                        |
+| list                               |                              | 列出当前已安装的插件(包括其版本信息)                                                                                                                        |
+| search `[<keyword>]` [...]         |                              | 在 http://plugins.cordova.io 中搜索符合搜索关键字的插件                                                                                                     |
+| save                               |                              | 将所有已添加的插件的相关信息保存到项目配置中。                                                                                                              |
 
 ### Plugin-spec
 
@@ -313,14 +313,14 @@ cordova {plugin | plugins} [
 
     <plugin-spec> : [@scope/]pluginID[@version]|directory|url[#commit-ish][:subdir]
 
-| 值       | 说明
-|-------------|--------------------
-| scope       | Scope of plugin published as a [scoped npm package]
-| plugin      | Plugin id (id of plugin in npm registry or in --searchPath)
-| version     | Major.minor.patch version specifier using semver
-| directory   | Directory containing plugin.xml
-| url         | Url to a git repository containing a plugin.xml
-| commit-ish  | Commit/tag/branch reference. If none is specified, 'master' is used
+| 值         | 说明                                                                |
+| ---------- | ------------------------------------------------------------------- |
+| scope      | Scope of plugin published as a [scoped npm package]                 |
+| plugin     | Plugin id (id of plugin in npm registry or in --searchPath)         |
+| version    | Major.minor.patch version specifier using semver                    |
+| directory  | Directory containing plugin.xml                                     |
+| url        | Url to a git repository containing a plugin.xml                     |
+| commit-ish | Commit/tag/branch reference. If none is specified, 'master' is used |
 
 ### 插件解析算法
 
@@ -380,10 +380,10 @@ cordova prepare [<platform> [..]]
 
 ### 选项
 
-| 选项     | 说明
-|------------|------------------
-| ``<platform> [..]`` | 需要执行 prepare 的平台，可以指定多个。 如果未指定，则生成所有平台。
-|--browserify | Compile plugin JS at build time using browserify instead of runtime.
+| 选项                | 说明                                                                 |
+| ------------------- | -------------------------------------------------------------------- |
+| ``<platform> [..]`` | 需要执行 prepare 的平台，可以指定多个。 如果未指定，则生成所有平台。 |
+| --browserify        | Compile plugin JS at build time using browserify instead of runtime. |
 
 ## cordova compile 命令
 
@@ -421,16 +421,16 @@ cordova build [<platform> [...]]
     [-- <platformOpts>]
 ```
 
-| 选项     | 说明
-|------------|------------------
-| ``<platform> [..]`` | 待构建的平台，可以指定多个。 如果未指定，则生成所有平台。
-| --debug    | 生成调试版 通常这会在相应平台中开启编译的调试模式。
-| --release  | 构建为发布版。 通常这会在相应平台中开启编译的发布模式。
-| --device   | 为真实设备构建
-| --emulator | 为仿真器构建 特别的, 真实设备和仿真器的平台结构可能不同。
-| --buildConfig=``<configFile>`` | 默认值: build.json(相应平台目录的 cordova 目录中，需要自行创建) . <br/> 指定用于构建的配置文件。 ``build.json`` 文件用于指定应用程序构建过程所需的参数，比如与包签名相关的参数。
-| --browserify | Compile plugin JS at build time using browserify instead of runtime
-| ``<platformOpts>`` | 设置特定于平台的选项，必须在 ``--`` 分隔符之后指定。 有关详细信息，请查看平台指南。
+| 选项                           | 说明                                                                                                                                                                             |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ``<platform> [..]``            | 待构建的平台，可以指定多个。 如果未指定，则生成所有平台。                                                                                                                        |
+| --debug                        | 生成调试版 通常这会在相应平台中开启编译的调试模式。                                                                                                                              |
+| --release                      | 构建为发布版。 通常这会在相应平台中开启编译的发布模式。                                                                                                                          |
+| --device                       | 为真实设备构建                                                                                                                                                                   |
+| --emulator                     | 为仿真器构建 特别的, 真实设备和仿真器的平台结构可能不同。                                                                                                                        |
+| --buildConfig=``<configFile>`` | 默认值: build.json(相应平台目录的 cordova 目录中，需要自行创建) . <br/> 指定用于构建的配置文件。 ``build.json`` 文件用于指定应用程序构建过程所需的参数，比如与包签名相关的参数。 |
+| --browserify                   | Compile plugin JS at build time using browserify instead of runtime                                                                                                              |
+| ``<platformOpts>``             | 设置特定于平台的选项，必须在 ``--`` 分隔符之后指定。 有关详细信息，请查看平台指南。                                                                                              |
 
 ### 范例
 
@@ -463,20 +463,20 @@ cordova run [<platform> [...]]
     [-- <platformOpts>]
 ```
 
-| 选项      | 说明
-|-------------|------------------
-| ``<platform> [..]`` | 指定需要运行的平台，可以指定多个。. 如果未指定，则在所有平台上运行。
-| --list      | 列出所有可供运行的目标。 如果没有指定，真实设备和仿真器都会列出。
-| --debug     | 部署调试版本。 除非指定 ``--release``，否则这是默认行为。
-| --release   | 部署发布版。
-| --noprepare | 跳过准备操作 (仅在 Cordova v6. 2 或更高版本中支持)
-| --nobuild   | 跳过构建。
-| --device    | 部署到设备。
-| --emulator  | 部署到仿真器。
-| --target    | 指定部署到特定的仿真器或设备。 可以使用 ``--list`` 列出所有可用的目标设备。
-| --buildConfig=``<configFile>`` | 默认值: build.json(相应平台目录的 cordova 目录中，需要自行创建) 。 <br/>指定用于构建的配置文件。 ``build.json`` 文件用于指定应用程序构建过程所需的参数，比如与包签名相关的参数。
-| --browserify | Compile plugin JS at build time using browserify instead of runtime
-| ``<platformOpts>`` | 设置特定于平台的选项，必须在 ``--`` 分隔符之后指定。 有关详细信息，请查看平台指南。
+| 选项                           | 说明                                                                                                                                                                             |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ``<platform> [..]``            | 指定需要运行的平台，可以指定多个。. 如果未指定，则在所有平台上运行。                                                                                                             |
+| --list                         | 列出所有可供运行的目标。 如果没有指定，真实设备和仿真器都会列出。                                                                                                                |
+| --debug                        | 部署调试版本。 除非指定 ``--release``，否则这是默认行为。                                                                                                                        |
+| --release                      | 部署发布版。                                                                                                                                                                     |
+| --noprepare                    | 跳过准备操作 (仅在 Cordova v6. 2 或更高版本中支持)                                                                                                                               |
+| --nobuild                      | 跳过构建。                                                                                                                                                                       |
+| --device                       | 部署到设备。                                                                                                                                                                     |
+| --emulator                     | 部署到仿真器。                                                                                                                                                                   |
+| --target                       | 指定部署到特定的仿真器或设备。 可以使用 ``--list`` 列出所有可用的目标设备。                                                                                                      |
+| --buildConfig=``<configFile>`` | 默认值: build.json(相应平台目录的 cordova 目录中，需要自行创建) 。 <br/>指定用于构建的配置文件。 ``build.json`` 文件用于指定应用程序构建过程所需的参数，比如与包签名相关的参数。 |
+| --browserify                   | Compile plugin JS at build time using browserify instead of runtime                                                                                                              |
+| ``<platformOpts>``             | 设置特定于平台的选项，必须在 ``--`` 分隔符之后指定。 有关详细信息，请查看平台指南。                                                                                              |
 
 ### 范例
 
@@ -585,10 +585,10 @@ cordova serve [port]
 cordova telemetry [STATE]
 ```
 
-| 选项      | 说明
-|-------------|------------------
-| on          | 开启开发者数据采集系统。
-| off         | 关闭开发者数据采集系统。
+| 选项 | 说明                     |
+| ---- | ------------------------ |
+| on   | 开启开发者数据采集系统。 |
+| off  | 关闭开发者数据采集系统。 |
 
 ### 详述
  第一次运行 cordova 命令时，将显示一个定时提示，要求用户选择进入或退出。
