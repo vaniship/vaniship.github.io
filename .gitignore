@@ -35,29 +35,9 @@ package-lock.json
 !/node_modules/marked/marked.min.js
 
 # MDBlog
-!/node_modules/mdblog/
-!/node_modules/mdblog/**/*
-/node_modules/mdblog/package.json
-
-# MDBlog Eit On GitHub Gimmick
-!/node_modules/mdblog-gimmick-edit-on-github/
-!/node_modules/mdblog-gimmick-edit-on-github/**/*
-/node_modules/mdblog-gimmick-edit-on-github/package.json
-
-# MDBlog Dir Tree Plugin
-!/node_modules/mdblog-plugin-dirtree/
-!/node_modules/mdblog-plugin-dirtree/**/*
-/node_modules/mdblog-plugin-dirtree/package.json
-
-# MDBlog Mermaid Plugin
-!/node_modules/mdblog-plugin-mermaid/
-!/node_modules/mdblog-plugin-mermaid/**/*
-/node_modules/mdblog-plugin-mermaid/package.json
-
-# MDBlog Orgchart Plugin
-!/node_modules/mdblog-plugin-orgchart/
-!/node_modules/mdblog-plugin-orgchart/**/*
-/node_modules/mdblog-plugin-orgchart/package.json
+!/node_modules/@mdblog/
+!/node_modules/@mdblog/**/*
+/node_modules/@mdblog/**/package.json
 
 # mermaid
 !/node_modules/mermaid/
