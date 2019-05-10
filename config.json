@@ -1,4 +1,5 @@
 {
+    "theme": "default",
     "useSideMenu": true,
     "lineBreaks": "gfm",
     "additionalFooterText": "好奇 & 行动 & 执着",

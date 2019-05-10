@@ -13,7 +13,7 @@ cordova <command> [options] -- [platformOpts]
 | 命令           | 说明                                            |
 | -------------- | ----------------------------------------------- |
 | create         | 创建工程                                        |
-| help <command> | 获取相关命令的帮助                              |
+| help &lt;command> | 获取相关命令的帮助                              |
 | telemetry      | Turn telemetry collection on or off             |
 | config         | 设置、获取、删除、编辑和列出全局 cordova 选项。 |
 

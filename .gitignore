@@ -2,25 +2,71 @@ package-lock.json
 dist/
 /node_modules/**/*
 /content/inbox
+/content/translation/**/*.en.md
+/content/translation/cordova/**
+/content/*
 
-# lodash
-!/node_modules/lodash/
-!/node_modules/lodash/lodash.min.js
+# @antv
+!/node_modules/@antv/
 
-# jquery
-!/node_modules/jquery/
-!/node_modules/jquery/dist/
-!/node_modules/jquery/dist/jquery.min.js
+# @antv/g6
+!/node_modules/@antv/g6/
+!/node_modules/@antv/g6/build/
+!/node_modules/@antv/g6/build/*.js
+
+# @antv/hierarchy
+!/node_modules/@antv/hierarchy/
+!/node_modules/@antv/hierarchy/build/
+!/node_modules/@antv/hierarchy/build/*.js
+
+# MDBlog
+!/node_modules/@mdblog/
+!/node_modules/@mdblog/**/
+/node_modules/@mdblog/**/package.json
+
+# axios
+!/node_modules/axios/
+!/node_modules/axios/dist/
+!/node_modules/axios/dist/*.js
+
+# blueimp-md5
+!/node_modules/blueimp-md5/
+!/node_modules/blueimp-md5/js/
+!/node_modules/blueimp-md5/js/*.js
 
 # bootstrap
 !/node_modules/bootstrap/
 !/node_modules/bootstrap/dist/
 !/node_modules/bootstrap/dist/css/
+!/node_modules/bootstrap/dist/css/bootstrap.css
 !/node_modules/bootstrap/dist/css/bootstrap.min.css
 !/node_modules/bootstrap/dist/fonts/
 !/node_modules/bootstrap/dist/fonts/*
 !/node_modules/bootstrap/dist/js/
+!/node_modules/bootstrap/dist/js/bootstrap.js
 !/node_modules/bootstrap/dist/js/bootstrap.min.js
+
+# bootstrap-vue
+!/node_modules/bootstrap-vue/
+!/node_modules/bootstrap-vue/dist/
+!/node_modules/bootstrap-vue/dist/*.js
+!/node_modules/bootstrap-vue/dist/*.css
+
+# font-awesome
+!/node_modules/font-awesome/
+!/node_modules/font-awesome/css/
+!/node_modules/font-awesome/css/*.css
+!/node_modules/font-awesome/font/*
+
+# he
+!/node_modules/he/
+!/node_modules/he/he.js
+
+# jquery
+!/node_modules/jquery/
+!/node_modules/jquery/dist/
+!/node_modules/jquery/dist/jquery.js
+!/node_modules/jquery/dist/jquery.min.js
 
 # jsonic
 !/node_modules/jsonic/
@@ -34,11 +80,6 @@ dist/
 # marked
 !/node_modules/marked/
 !/node_modules/marked/marked.min.js
-
-# MDBlog
-!/node_modules/@mdblog/
-!/node_modules/@mdblog/**/*
-/node_modules/@mdblog/**/package.json
 
 # mermaid
 !/node_modules/mermaid/
@@ -60,14 +101,20 @@ dist/
 !/node_modules/prismjs/themes/*
 !/node_modules/prismjs/prism.js
 
-# requirejs
-!/node_modules/requirejs/
-!/node_modules/requirejs/require.js
+# qs
+!/node_modules/qs/
+!/node_modules/qs/dist/
+!/node_modules/qs/dist/qs.js
 
-# require-css
-!/node_modules/require-css/
-!/node_modules/require-css/normalize.js
-!/node_modules/require-css/css.js
-!/node_modules/require-css/css-builder.js
+# systemjs
+!/node_modules/systemjs/
+!/node_modules/systemjs/dist/
+!/node_modules/systemjs/dist/*.js
+
+# vue
+!/node_modules/vue/
+!/node_modules/vue/dist/
+!/node_modules/vue/dist/vue.js
+!/node_modules/vue/dist/vue.min.js
 
 .DS_Store

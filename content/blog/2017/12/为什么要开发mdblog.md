@@ -33,7 +33,7 @@
 
 ### 流程图
 
-```mermaid!
+```plugin!mermaid
 graph TD;
     A-->B;
     A-->C;
@@ -43,7 +43,7 @@ graph TD;
 
 ### 时序图
 
-```mermaid!
+```plugin!mermaid
 sequenceDiagram
     participant Alice
     participant Bob
@@ -59,7 +59,7 @@ sequenceDiagram
 
 ### 甘特图
 
-```mermaid!
+```plugin!mermaid
 gantt
 dateFormat  YYYY-MM-DD
 title Adding GANTT diagram to mermaid
@@ -73,7 +73,7 @@ Future task2               :         des4, after des3, 5d
 
 ### 类图
 
-```mermaid!
+```plugin!mermaid
 classDiagram
 Class01 <|-- AveryLongClass : Cool
 Class03 *-- Class04
@@ -92,7 +92,7 @@ Class08 <--> C2: Cool label
 
 ### 文件结构图
 
-```dirtree!json
+```plugin!dirtree?json
 [{
   "text": "src",
   "type": "folder",
@@ -107,7 +107,7 @@ Class08 <--> C2: Cool label
 
 ### 组织关系图
 
-```orgchart!
+```plugin!orgchart
 {
   'name': 'Lao Lao',
   'title': 'general manager',

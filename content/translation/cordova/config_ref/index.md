@@ -133,7 +133,7 @@ app/platforms/android/res/xml/config.xml
 ## 访问控制
 
 用 ``access`` 元素来定义允许应用程序与之通信的外部域的集合。The default value shown above allows it to access any server.
-有关详细信息，请参阅域[白名单指南](../guide/appdev/whitelist/index.html)。
+有关详细信息，请参阅域[白名单指南](../guide/appdev/whitelist/index.en.md)。
 
 | 属性（类型）<br/> <span class="sub-header">平台限定：</span> | 说明                                                |
 | ------------------------------------------------------------ | --------------------------------------------------- |
