@@ -57,7 +57,8 @@ dist/
 !/node_modules/font-awesome/
 !/node_modules/font-awesome/css/
 !/node_modules/font-awesome/css/*.css
-!/node_modules/font-awesome/font/*
+!/node_modules/font-awesome/fonts/
+!/node_modules/font-awesome/fonts/*
 
 # he
 !/node_modules/he/
