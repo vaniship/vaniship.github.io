@@ -20,7 +20,7 @@ dist/
 # MDBlog
 !/node_modules/@mdblog/
 !/node_modules/@mdblog/**/
-!/node_modules/@mdblog/**/dist/*
+!/node_modules/@mdblog/**/dist/**/*
 /node_modules/@mdblog/**/package.json
 
 # axios
