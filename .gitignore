@@ -3,8 +3,6 @@ dist/
 /node_modules/**/*
 /content/inbox
 /content/translation/**/*.en.md
-/content/translation/cordova/**
-/content/*
 
 # @antv
 !/node_modules/@antv/
