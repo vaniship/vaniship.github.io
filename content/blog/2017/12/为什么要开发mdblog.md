@@ -92,7 +92,7 @@ Class08 <--> C2: Cool label
 
 ### 文件结构图
 
-```plugin!dirtree?json
+```js plugin!dirtree
 [{
   "text": "src",
   "type": "folder",
@@ -107,7 +107,7 @@ Class08 <--> C2: Cool label
 
 ### 组织关系图
 
-```plugin!orgchart
+```js plugin!orgchart
 {
   'name': 'Lao Lao',
   'title': 'general manager',
@@ -134,6 +134,51 @@ Class08 <--> C2: Cool label
             { 'name': 'Zai Zai', 'title': 'engineer', 'className': 'slide-up' }
           ]
         }
+      ]
+    }
+  ]
+}
+```
+
+### 思维导图
+
+```js plugin!mindmap?height=480
+{
+  text: 'MDBlog',
+  children: [
+    {
+      text: '特性',
+      children: [
+        { text: 'Markdown 为存储格式' },
+        { text: '无需数据库支持' },
+        { text: '无需编译，可直接发布Git Page' },
+        { text: '编程语言代码高亮' },
+        { text: '绘图支持' },
+        { text: '插件化设计，易于扩展' }
+      ]
+    },
+    {
+      text: '功能',
+      children: [
+        { text: '流程图' },
+        { text: '时序图' },
+        { text: '甘特图' },
+        { text: '类图' },
+        { text: '文件结构图' },
+        { text: '组织关系图' },
+        { text: '思维导图' }
+      ]
+    },
+    {
+      text: '知识管理工具的演进',
+      children: [
+        { text: '仅做收集' },
+        { text: '编辑创作' },
+        { text: '自建维基' },
+        { text: 'Markdown' },
+        { text: '静态博客' },
+        { text: '前端渲染' },
+        { text: '返璞归真' }
       ]
     }
   ]
