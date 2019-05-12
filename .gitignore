@@ -71,6 +71,7 @@ dist/
 
 # jsonic
 !/node_modules/jsonic/
+!/node_modules/jsonic/jsonic.js
 !/node_modules/jsonic/jsonic-min.js
 
 # jstree
@@ -80,11 +81,13 @@ dist/
 
 # marked
 !/node_modules/marked/
+!/node_modules/marked/marked.js
 !/node_modules/marked/marked.min.js
 
 # mermaid
 !/node_modules/mermaid/
 !/node_modules/mermaid/dist/
+!/node_modules/mermaid/dist/mermaid.js
 !/node_modules/mermaid/dist/mermaid.min.js
 
 # orgchart
