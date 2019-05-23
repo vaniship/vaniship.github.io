@@ -17,7 +17,7 @@
     "@mdblog/code-plugin-orgchart": "^2.0.1",
     "@mdblog/link-plugin-edit-on-github": "^2.0.0",
     "@mdblog/mdblog": "^2.0.7",
-    "@mdblog/theme-default": "^2.0.0"
+    "@mdblog/theme-default": "^2.0.1"
   },
   "devDependencies": {
     "@mdblog/locally": "^2.0.0"
