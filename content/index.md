@@ -10,7 +10,8 @@
 
 # Blog
 
-[2018 年文章目录](/blog/2018/index.md)
-[2017 年文章目录](/blog/2017/index.md)
+[2019 年文章目录](blog/2019/index.md)
+[2018 年文章目录](blog/2018/index.md)
+[2017 年文章目录](blog/2017/index.md)
 
 # 文章推荐
