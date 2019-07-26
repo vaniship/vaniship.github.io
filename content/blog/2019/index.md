@@ -1,6 +1,8 @@
 # 2019 年文章目录
 
 * [利用JFR生成性能日志](04/利用JFR生成性能日志.md)
+* [系统划分-康威定律](05/系统划分-康威定律.md)
+* [解决SpringBoot启动缓慢](05/解决SpringBoot启动缓慢.md)
 * [Systemd 使用](06/Systemd使用.md)
 * [Systemd 的配置文件](06/Systemd配置文件.md)
 * [为 Jupyter 编写 kernel](07/为Jupyter编写kernel.md)
