@@ -17,7 +17,7 @@
     "@mdblog/code-plugin-mindmap": "^2.0.1",
     "@mdblog/code-plugin-orgchart": "^2.0.1",
     "@mdblog/link-plugin-edit-on-github": "^2.0.0",
-    "@mdblog/mdblog": "^2.0.8",
+    "@mdblog/mdblog": "^2.0.9",
     "@mdblog/theme-default": "^2.0.1"
   },
   "devDependencies": {
