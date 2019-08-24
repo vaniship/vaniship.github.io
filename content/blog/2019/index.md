@@ -12,4 +12,5 @@
 * [Nginx配置实例](07/Nginx配置实例.md)
 * [性能问题排查(通用)](07/性能问题排查.md)
 * [Java性能问题排查](07/Java应用性能问题排查.md)
-
+* [centos7-base-img](08/centos7-base-img.md)
+* [Arthas 阿里开源 Java 诊断工具](08/Arthas阿里开源Java诊断工具.md)

@@ -23,3 +23,28 @@ EOF
 ```bash
 export PS1=myprompt
 ```
+
+## 创建指定大小的文件
+
+```bash
+fallocate -l 10M filename.txt
+```
+
+## Case
+
+```bash
+case "$1" in
+  start)
+    echo "start"
+    ;;
+
+  stop)
+    echo "stop"
+    ;;
+
+  *)
+    echo "Usage: run.sh {start|stop}"
+    ;;
+
+esac
+```
