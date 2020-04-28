@@ -48,3 +48,29 @@ case "$1" in
 
 esac
 ```
+
+## 数组定义
+
+```bash
+array=('a' 'b' 'c')
+```
+
+## for 循环
+
+```bash
+for ((i=0;i<${#array[@]};i++)); do
+  echo ${array[i]}
+done
+```
+
+```bash
+for i in "${!array[@]}"; do
+  echo ${array[$i]}
+done
+```
+
+```bash
+for element in ${array[@]}; do # 也可以写成for element in ${array[*]}
+  echo $element
+done
+```

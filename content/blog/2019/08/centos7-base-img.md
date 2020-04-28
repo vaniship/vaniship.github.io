@@ -34,7 +34,7 @@ sudo rpm -ivh jdk-*.rpm
 
 # === 安装 nodejs ===
 # 更多参考 https://github.com/nodejs/help/wiki/Installation
-export NODE_VERSION=v8.16.0
+export NODE_VERSION=v8.16.2
 wget https://nodejs.org/dist/latest-v8.x/node-$NODE_VERSION-linux-x64.tar.xz
 sudo mkdir /usr/local/lib/nodejs
 sudo tar -xJvf node-$NODE_VERSION-linux-x64.tar.xz -C /usr/local/lib/nodejs
@@ -45,12 +45,21 @@ sudo ln -s /usr/local/lib/nodejs/node-$NODE_VERSION/bin/npx /usr/bin/npx
 
 # === 安装 nginx ===
 # 更多参考 https://nginx.org/en/linux_packages.html#stable
+sudo yum install yum-utils
 cat>/etc/yum.repos.d/nginx.repo<<EOF
-[nginx]
-name=nginx repo
-baseurl=http://nginx.org/packages/centos/7/basearch/
-gpgcheck=0
+[nginx-stable]
+name=nginx stable repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=1
 enabled=1
+gpgkey=https://nginx.org/keys/nginx_signing.key
+
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=https://nginx.org/keys/nginx_signing.key
 EOF
 sudo yum install -y nginx
 # --- 配置 nginx 相关的 SELinux ---
@@ -83,7 +92,7 @@ sudo yum install mysql-server
 sudo systemctl start mysqld
 sudo systemctl enable mysqld
 # --- 开放防火墙端口(如需要) ---
-# firewall-cmd –add-port=3306/tcp –permanent
+# firewall-cmd --add-port=3306/tcp --permanent
 # 重启防火墙
 # service firewalld restart
 # --- mysql 安全配置 ---

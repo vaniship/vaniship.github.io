@@ -13,4 +13,8 @@
 * [性能问题排查(通用)](07/性能问题排查.md)
 * [Java性能问题排查](07/Java应用性能问题排查.md)
 * [centos7-base-img](08/centos7-base-img.md)
+* [微信小程序开发踩坑记录](08/微信小程序开发踩坑记录.md)
 * [Arthas 阿里开源 Java 诊断工具](08/Arthas阿里开源Java诊断工具.md)
+* [GitObjectHash算法](10/GitObjectHash算法.md)
+* [MacQuickLook](11/MacQuickLook.md)
+
