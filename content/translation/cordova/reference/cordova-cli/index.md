@@ -311,7 +311,9 @@ cordova {plugin | plugins} [
 
 有许多方法来指定插件：
 
-    <plugin-spec> : [@scope/]pluginID[@version]|directory|url[#commit-ish][:subdir]
+```text
+<plugin-spec> : [@scope/]pluginID[@version]|directory|url[#commit-ish][:subdir]
+```
 
 | 值         | 说明                                                                |
 | ---------- | ------------------------------------------------------------------- |

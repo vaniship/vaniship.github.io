@@ -20,7 +20,7 @@
 * [微信小程序 Github Time](https://github.com/github-time/github-time-mp)
 * [Typescript 版 Spring boot](https://github.com/node-tspring)
 * [UDock 前端框架](https://github.com/udock)
-* [GitPage 静态博客系统](https://github.com/MD-Blog)
+* [免编译 GitPages 静态博客系统](https://github.com/MD-Blog)
 * [VSCode Vue 语言服务插件](https://github.com/u10/vscode-vue-ls)
 * [VSCode Vue 代码片段集插件](https://github.com/u10/vscode-vue-ls-snippets)
 * [VSCode 代码片段集文档生成插件](https://github.com/u10/vscode-snippets-doc-maker)
