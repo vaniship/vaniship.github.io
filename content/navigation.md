@@ -27,8 +27,4 @@
 * [函数调用限流器(java)](https://github.com/u10/calllimiter)
 * [FISCO-BCOS Spring boot starter](https://github.com/u10/FISCO-BCOS-starter)
 
-[inbox]()
-
-* [2019](/inbox/2019/index.md)
-
 [plugin!edit-on-github:[编辑本页]](vaniship#master)
