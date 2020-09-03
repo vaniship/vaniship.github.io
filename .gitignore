@@ -122,4 +122,30 @@ dist/
 !/node_modules/vue/dist/vue.js
 !/node_modules/vue/dist/vue.min.js
 
+# mathjax
+!/node_modules/mathjax/
+!/node_modules/mathjax/config/
+!/node_modules/mathjax/config/*.js
+!/node_modules/mathjax/config/**/
+!/node_modules/mathjax/config/**/*.js
+!/node_modules/mathjax/extensions/
+!/node_modules/mathjax/extensions/**/
+!/node_modules/mathjax/extensions/**/*.js
+!/node_modules/mathjax/extensions/**/*.mp3
+!/node_modules/mathjax/extensions/**/*.ogg
+!/node_modules/mathjax/fonts/
+!/node_modules/mathjax/fonts/**/
+!/node_modules/mathjax/fonts/**/*.eot
+!/node_modules/mathjax/fonts/**/*.otf
+!/node_modules/mathjax/fonts/**/*.woff
+!/node_modules/mathjax/fonts/**/*.svg
+!/node_modules/mathjax/fonts/**/*.txt
+!/node_modules/mathjax/jax/
+!/node_modules/mathjax/jax/**/
+!/node_modules/mathjax/jax/**/*.js
+!/node_modules/mathjax/localization/
+!/node_modules/mathjax/localization/**/
+!/node_modules/mathjax/localization/**/*.js
+!/node_modules/mathjax/MathJax.js
+
 .DS_Store
