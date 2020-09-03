@@ -16,10 +16,10 @@
     "@mdblog/code-plugin-dirtree": "^2.0.4",
     "@mdblog/code-plugin-mathjax": "^2.0.0",
     "@mdblog/code-plugin-mermaid": "^2.0.2",
-    "@mdblog/code-plugin-mindmap": "^2.0.2",
+    "@mdblog/code-plugin-mindmap": "^2.0.3",
     "@mdblog/code-plugin-orgchart": "^2.0.2",
     "@mdblog/link-plugin-edit-on-github": "^2.0.0",
-    "@mdblog/mdblog": "^2.0.9",
+    "@mdblog/mdblog": "^2.0.11",
     "@mdblog/theme-default": "^2.0.1"
   },
   "devDependencies": {
