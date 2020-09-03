@@ -6,21 +6,26 @@
   "main": "index.js",
   "scripts": {
     "dev": "http-server -c-1",
-    "build": "mdblog-locally"
+    "build": "mdblog-locally",
+    "confdev": "yarn link @mdblog/code-plugin-dirtree && yarn link @mdblog/code-plugin-mathjax && yarn link @mdblog/code-plugin-mermaid && yarn link @mdblog/code-plugin-mindmap && yarn link @mdblog/code-plugin-orgchart && yarn link @mdblog/link-plugin-edit-on-github && yarn link @mdblog/mdblog && yarn link @mdblog/theme-default",
+    "confdev:off": "yarn unlink @mdblog/code-plugin-dirtree && yarn unlink @mdblog/code-plugin-mathjax && yarn unlink @mdblog/code-plugin-mermaid && yarn unlink @mdblog/code-plugin-mindmap && yarn unlink @mdblog/code-plugin-orgchart && yarn unlink @mdblog/link-plugin-edit-on-github && yarn unlink @mdblog/mdblog && yarn unlink @mdblog/theme-default && yarn --force install"
   },
   "author": "vaniship",
   "license": "MIT",
   "dependencies": {
-    "@mdblog/code-plugin-dirtree": "^2.0.3",
+    "@mdblog/code-plugin-dirtree": "^2.0.4",
     "@mdblog/code-plugin-mathjax": "^2.0.0",
     "@mdblog/code-plugin-mermaid": "^2.0.2",
-    "@mdblog/code-plugin-mindmap": "^2.0.1",
-    "@mdblog/code-plugin-orgchart": "^2.0.1",
+    "@mdblog/code-plugin-mindmap": "^2.0.2",
+    "@mdblog/code-plugin-orgchart": "^2.0.2",
     "@mdblog/link-plugin-edit-on-github": "^2.0.0",
     "@mdblog/mdblog": "^2.0.9",
     "@mdblog/theme-default": "^2.0.1"
   },
   "devDependencies": {
     "@mdblog/locally": "^2.0.0"
+  },
+  "resolutions": {
+    "jspdf": "^2.0.0"
   }
 }
